@@ -1,2 +1,2 @@
 # React & Typescript
-This is a React + Typescript project
+A React + Typescript project, going through refs, data models, form submitting, state management
