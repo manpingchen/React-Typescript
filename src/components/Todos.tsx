@@ -1,10 +1,9 @@
 import React from "react";
+import Todo from "../models/todo";
 
 // Use "Generics type"
 // FC stands for Functional Component
-
-type Items = { id: number; title: string }[];
-const Todos: React.FC<{ items: Items }> = (props) => {
+const Todos: React.FC<{ items: Todo[] }> = (props) => {
   return (
     <ul>
       {props.items.map((item) => (
