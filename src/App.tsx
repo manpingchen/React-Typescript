@@ -1,19 +1,20 @@
+import { useState } from "react";
 import "./App.css";
 import NewToDo from "./components/NewTodo";
 import Todos from "./components/Todos";
 import Todo from "./models/todo";
 
 function App() {
-  const todos = [new Todo("Learning React"), new Todo("Learning TypeScript")];
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodoHandler = (todo: string) => {
-    console.log(todo);
+    setTodos((prevTodos) => prevTodos.concat(new Todo(todo)));
   };
 
   return (
     <div>
-      <Todos items={todos} />
       <NewToDo onAddTodo={addTodoHandler} />
+      <Todos items={todos} />
     </div>
   );
 }
