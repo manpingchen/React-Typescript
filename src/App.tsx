@@ -5,10 +5,15 @@ import Todo from "./models/todo";
 
 function App() {
   const todos = [new Todo("Learning React"), new Todo("Learning TypeScript")];
+
+  const addTodoHandler = (todo: string) => {
+    console.log(todo);
+  };
+
   return (
     <div>
       <Todos items={todos} />
-      <NewToDo />
+      <NewToDo onAddTodo={addTodoHandler} />
     </div>
   );
 }
