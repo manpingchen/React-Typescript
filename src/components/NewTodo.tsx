@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { TodosContext } from "../store/todos-context";
 
-const NewToDo: React.FC<{ onAddTodo: (todo: string) => void }> = (props) => {
+const NewToDo: React.FC = () => {
+  const todosCtx = useContext(TodosContext);
   const toDoInputRef = useRef<HTMLInputElement>(null);
 
   const submitHandler = (event: React.FormEvent) => {
@@ -13,7 +15,7 @@ const NewToDo: React.FC<{ onAddTodo: (todo: string) => void }> = (props) => {
       return;
     }
 
-    props.onAddTodo(enteredText);
+    todosCtx.addTodo(enteredText);
   };
 
   return (

@@ -26,6 +26,7 @@ input {
 button {
   margin: 0 auto 30px;
   border: none;
+  cursor: pointer;
 }
 
 input,
