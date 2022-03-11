@@ -1,0 +1,34 @@
+.item {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.item:hover::before {
+  content: "Click to remove!";
+  background: linear-gradient(-45deg, #fe8ab6af, #7f6fedad, #23a6d5af, #23d5abaf);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  backdrop-filter: blur(3px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

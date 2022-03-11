@@ -4,11 +4,15 @@ import TodoItem from "./TodoItem";
 
 // Use "Generics type"
 // FC stands for Functional Component
-const Todos: React.FC<{ items: Todo[] }> = (props) => {
+const Todos: React.FC<{ items: Todo[]; onRemoveTodo: (id: string) => void }> = (props) => {
   return (
     <ul>
       {props.items.map((item) => (
-        <TodoItem key={item.id} title={item.title} />
+        <TodoItem
+          key={item.id}
+          title={item.title}
+          onRemoveTodo={props.onRemoveTodo.bind(null, item.id)}
+        />
       ))}
     </ul>
   );
