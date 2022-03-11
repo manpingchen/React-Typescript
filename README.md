@@ -1,4 +1,18 @@
 # React & Typescript
 A React + Typescript project, going through refs, data models, form submitting, state management
 
-![alt text](https://repository-images.githubusercontent.com/467183056/9e935f24-3dd0-490e-8766-3044f6436856)
+https://user-images.githubusercontent.com/10693128/157898591-daddc1ae-fbee-4e0a-a9eb-a27da80a57e6.mov
+
+### Features
+#### Add new todo item
+```typescript
+const addTodoHandler = (todo: string) => {
+  setTodos((prevTodos) => prevTodos.concat(new Todo(todo)));
+};
+```
+#### Remove todo item (:dizzy: with fancy animation background!)
+```typescript
+const removeTodoHandler = (todoId: string) => {
+  setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
+};
+```
